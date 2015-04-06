@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		375531A11ACF880D00FF5B5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 375531A01ACF880D00FF5B5B /* main.m */; };
+		375531A41ACF880D00FF5B5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 375531A31ACF880D00FF5B5B /* AppDelegate.m */; };
+		375531A71ACF880D00FF5B5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375531A61ACF880D00FF5B5B /* ViewController.m */; };
+		375531AA1ACF880D00FF5B5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375531A81ACF880D00FF5B5B /* Main.storyboard */; };
+		375531AC1ACF880D00FF5B5B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375531AB1ACF880D00FF5B5B /* Images.xcassets */; };
+		375531AF1ACF880D00FF5B5B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375531AD1ACF880D00FF5B5B /* LaunchScreen.xib */; };
+		375531BB1ACF880D00FF5B5B /* LKSStreamCameraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 375531BA1ACF880D00FF5B5B /* LKSStreamCameraTests.m */; };
+		375531C61ACF887E00FF5B5B /* LKSStreamCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 375531C51ACF887E00FF5B5B /* LKSStreamCamera.m */; };
+		375531C91ACF88AE00FF5B5B /* UIViewController+Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 375531C81ACF88AE00FF5B5B /* UIViewController+Container.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		375531B51ACF880D00FF5B5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 375531931ACF880D00FF5B5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3755319A1ACF880D00FF5B5B;
+			remoteInfo = LKSStreamCamera;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3755319B1ACF880D00FF5B5B /* LKSStreamCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LKSStreamCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3755319F1ACF880D00FF5B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		375531A01ACF880D00FF5B5B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		375531A21ACF880D00FF5B5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		375531A31ACF880D00FF5B5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		375531A51ACF880D00FF5B5B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		375531A61ACF880D00FF5B5B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		375531A91ACF880D00FF5B5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		375531AB1ACF880D00FF5B5B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		375531AE1ACF880D00FF5B5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		375531B41ACF880D00FF5B5B /* LKSStreamCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LKSStreamCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		375531B91ACF880D00FF5B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		375531BA1ACF880D00FF5B5B /* LKSStreamCameraTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKSStreamCameraTests.m; sourceTree = "<group>"; };
+		375531C41ACF887E00FF5B5B /* LKSStreamCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKSStreamCamera.h; sourceTree = "<group>"; };
+		375531C51ACF887E00FF5B5B /* LKSStreamCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKSStreamCamera.m; sourceTree = "<group>"; };
+		375531C71ACF88AE00FF5B5B /* UIViewController+Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Container.h"; sourceTree = "<group>"; };
+		375531C81ACF88AE00FF5B5B /* UIViewController+Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Container.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		375531981ACF880D00FF5B5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		375531B11ACF880D00FF5B5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		375531921ACF880D00FF5B5B = {
+			isa = PBXGroup;
+			children = (
+				3755319D1ACF880D00FF5B5B /* LKSStreamCamera */,
+				375531B71ACF880D00FF5B5B /* LKSStreamCameraTests */,
+				3755319C1ACF880D00FF5B5B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3755319C1ACF880D00FF5B5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3755319B1ACF880D00FF5B5B /* LKSStreamCamera.app */,
+				375531B41ACF880D00FF5B5B /* LKSStreamCameraTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3755319D1ACF880D00FF5B5B /* LKSStreamCamera */ = {
+			isa = PBXGroup;
+			children = (
+				375531A21ACF880D00FF5B5B /* AppDelegate.h */,
+				375531A31ACF880D00FF5B5B /* AppDelegate.m */,
+				375531A51ACF880D00FF5B5B /* ViewController.h */,
+				375531A61ACF880D00FF5B5B /* ViewController.m */,
+				375531A81ACF880D00FF5B5B /* Main.storyboard */,
+				375531C41ACF887E00FF5B5B /* LKSStreamCamera.h */,
+				375531C51ACF887E00FF5B5B /* LKSStreamCamera.m */,
+				375531C71ACF88AE00FF5B5B /* UIViewController+Container.h */,
+				375531C81ACF88AE00FF5B5B /* UIViewController+Container.m */,
+				375531AB1ACF880D00FF5B5B /* Images.xcassets */,
+				375531AD1ACF880D00FF5B5B /* LaunchScreen.xib */,
+				3755319E1ACF880D00FF5B5B /* Supporting Files */,
+			);
+			path = LKSStreamCamera;
+			sourceTree = "<group>";
+		};
+		3755319E1ACF880D00FF5B5B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3755319F1ACF880D00FF5B5B /* Info.plist */,
+				375531A01ACF880D00FF5B5B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		375531B71ACF880D00FF5B5B /* LKSStreamCameraTests */ = {
+			isa = PBXGroup;
+			children = (
+				375531BA1ACF880D00FF5B5B /* LKSStreamCameraTests.m */,
+				375531B81ACF880D00FF5B5B /* Supporting Files */,
+			);
+			path = LKSStreamCameraTests;
+			sourceTree = "<group>";
+		};
+		375531B81ACF880D00FF5B5B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				375531B91ACF880D00FF5B5B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3755319A1ACF880D00FF5B5B /* LKSStreamCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 375531BE1ACF880D00FF5B5B /* Build configuration list for PBXNativeTarget "LKSStreamCamera" */;
+			buildPhases = (
+				375531971ACF880D00FF5B5B /* Sources */,
+				375531981ACF880D00FF5B5B /* Frameworks */,
+				3766960D1AD2440D00B2F6CF /* ShellScript */,
+				375531991ACF880D00FF5B5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LKSStreamCamera;
+			productName = LKSStreamCamera;
+			productReference = 3755319B1ACF880D00FF5B5B /* LKSStreamCamera.app */;
+			productType = "com.apple.product-type.application";
+		};
+		375531B31ACF880D00FF5B5B /* LKSStreamCameraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 375531C11ACF880D00FF5B5B /* Build configuration list for PBXNativeTarget "LKSStreamCameraTests" */;
+			buildPhases = (
+				375531B01ACF880D00FF5B5B /* Sources */,
+				375531B11ACF880D00FF5B5B /* Frameworks */,
+				375531B21ACF880D00FF5B5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				375531B61ACF880D00FF5B5B /* PBXTargetDependency */,
+			);
+			name = LKSStreamCameraTests;
+			productName = LKSStreamCameraTests;
+			productReference = 375531B41ACF880D00FF5B5B /* LKSStreamCameraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		375531931ACF880D00FF5B5B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Loksland;
+				TargetAttributes = {
+					3755319A1ACF880D00FF5B5B = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					375531B31ACF880D00FF5B5B = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 3755319A1ACF880D00FF5B5B;
+					};
+				};
+			};
+			buildConfigurationList = 375531961ACF880D00FF5B5B /* Build configuration list for PBXProject "LKSStreamCamera" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 375531921ACF880D00FF5B5B;
+			productRefGroup = 3755319C1ACF880D00FF5B5B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3755319A1ACF880D00FF5B5B /* LKSStreamCamera */,
+				375531B31ACF880D00FF5B5B /* LKSStreamCameraTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		375531991ACF880D00FF5B5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				375531AA1ACF880D00FF5B5B /* Main.storyboard in Resources */,
+				375531AF1ACF880D00FF5B5B /* LaunchScreen.xib in Resources */,
+				375531AC1ACF880D00FF5B5B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		375531B21ACF880D00FF5B5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3766960D1AD2440D00B2F6CF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n#\n# Put this script in Target > \"Build Phases\" > (Add Build Phase) \"Add Run script\"\n# enter shell \"/bin/sh\"\n# check \"Show environment variables in build log\"\n#\n# Position after \"Link Binary With Libraries\" and before \"Copy Bundle Resources\"\n#\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		375531971ACF880D00FF5B5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				375531A71ACF880D00FF5B5B /* ViewController.m in Sources */,
+				375531A41ACF880D00FF5B5B /* AppDelegate.m in Sources */,
+				375531A11ACF880D00FF5B5B /* main.m in Sources */,
+				375531C61ACF887E00FF5B5B /* LKSStreamCamera.m in Sources */,
+				375531C91ACF88AE00FF5B5B /* UIViewController+Container.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		375531B01ACF880D00FF5B5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				375531BB1ACF880D00FF5B5B /* LKSStreamCameraTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		375531B61ACF880D00FF5B5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3755319A1ACF880D00FF5B5B /* LKSStreamCamera */;
+			targetProxy = 375531B51ACF880D00FF5B5B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		375531A81ACF880D00FF5B5B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				375531A91ACF880D00FF5B5B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		375531AD1ACF880D00FF5B5B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				375531AE1ACF880D00FF5B5B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		375531BC1ACF880D00FF5B5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		375531BD1ACF880D00FF5B5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		375531BF1ACF880D00FF5B5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LKSStreamCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		375531C01ACF880D00FF5B5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LKSStreamCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		375531C21ACF880D00FF5B5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LKSStreamCameraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LKSStreamCamera.app/LKSStreamCamera";
+			};
+			name = Debug;
+		};
+		375531C31ACF880D00FF5B5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LKSStreamCameraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LKSStreamCamera.app/LKSStreamCamera";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		375531961ACF880D00FF5B5B /* Build configuration list for PBXProject "LKSStreamCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				375531BC1ACF880D00FF5B5B /* Debug */,
+				375531BD1ACF880D00FF5B5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		375531BE1ACF880D00FF5B5B /* Build configuration list for PBXNativeTarget "LKSStreamCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				375531BF1ACF880D00FF5B5B /* Debug */,
+				375531C01ACF880D00FF5B5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		375531C11ACF880D00FF5B5B /* Build configuration list for PBXNativeTarget "LKSStreamCameraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				375531C21ACF880D00FF5B5B /* Debug */,
+				375531C31ACF880D00FF5B5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 375531931ACF880D00FF5B5B /* Project object */;
+}
