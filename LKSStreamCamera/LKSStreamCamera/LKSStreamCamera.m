@@ -251,13 +251,15 @@ typedef enum {
 #pragma mark - Actions
 
 // Returns nil |image| nil |error| when busy
--(void) takeSnapShot: (void (^)(UIImage *image, NSError *error)) handler {
+-(BOOL) takeSnapShot: (void (^)(UIImage *image, NSError *error)) handler {
     
     //CGSize size = CMVideoFormatDescriptionGetPresentationDimensions(camera.activeFormat.formatDescription, YES, YES);
     
-    if (!self.isRunning){
-        return;
+    if (!self.isRunning || self.busy){
+        return NO;
     }
+    
+    self.busy = YES;
     
     dispatch_async([self sessionQueue], ^{
         
@@ -273,7 +275,10 @@ typedef enum {
         [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:[self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo] completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
             
             if (error){
-                handler(nil, error);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    handler(nil, error);
+                    self.busy = NO;
+                });
             } else if (imageDataSampleBuffer){
                 
                 //CFDictionaryRef exifAttachments = CMGetAttachment(imageDataSampleBuffer, kCGImagePropertyExifDictionary, NULL);
@@ -285,6 +290,7 @@ typedef enum {
                 UIImage *image = [[UIImage alloc] initWithData:imageData];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     handler(image, nil);
+                    self.busy = NO;
                 });
                 
                 // [[[ALAssetsLibrary alloc] init] writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:nil];
@@ -292,6 +298,8 @@ typedef enum {
             }
         }];
     });
+    
+    return YES;
 }
 
 #pragma mark - Orientation
