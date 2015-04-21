@@ -19,7 +19,9 @@ typedef enum {
 
 @property (nonatomic,assign,readonly) BOOL deviceIsAuthorized;
 @property (nonatomic,assign,readonly) LKSStreamCameraScaleMode scaleMode;
-@property (nonatomic,assign,readonly) BOOL tapToFocusEnabled;
+@property (nonatomic,assign) BOOL tapToFocusEnabled;
+
+-(void) lockSettings;
 
 // Returns NO if busy
 -(BOOL) takeSnapShot: (void (^)(UIImage *image, NSError *error)) handler;

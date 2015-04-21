@@ -35,7 +35,7 @@ typedef enum {
 
 @property (nonatomic,assign,readwrite) LKSStreamCameraScaleMode scaleMode;
 @property (nonatomic,assign) CGRect viewFrame;
-@property (nonatomic,assign) BOOL tapToFocusEnabled;
+//@property (nonatomic,assign) BOOL tapToFocusEnabled;
 
 @property (nonatomic,assign,readonly) BOOL isRunning;
 
@@ -185,7 +185,7 @@ typedef enum {
             }
             captureVideoPreviewLayer.frame = self.view.bounds;
             [self.view.layer addSublayer:captureVideoPreviewLayer];
-            //
+            
             if ([captureVideoPreviewLayer.connection isVideoOrientationSupported]){
                 [captureVideoPreviewLayer.connection setVideoOrientation:(AVCaptureVideoOrientation)[self interfaceOrientation]];
             }
@@ -331,6 +331,11 @@ typedef enum {
     // Tap to focus
     // ------------
     
+    for (NSUInteger i = 0; i < self.view.gestureRecognizers.count; i++){
+        [self.view removeGestureRecognizer:[self.view.gestureRecognizers objectAtIndex:i]];
+        i--;
+    }
+    
     if (self.tapToFocusEnabled){
         
         if (listen){
@@ -338,23 +343,28 @@ typedef enum {
             UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleFocusTap:)];
             [self.view addGestureRecognizer:singleFingerTap];
             
-        } else {
-            
-            for (NSUInteger i = 0; i < self.view.gestureRecognizers.count; i++){
-                [self.view removeGestureRecognizer:[self.view.gestureRecognizers objectAtIndex:i]];
-                i--;
-            }
         }
     }
     
     // Subject area changes
     // --------------------
     
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVCaptureDeviceSubjectAreaDidChangeNotification object:self.captureDeviceInput.device];
     if (listen){
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(subjectAreaDidChange:) name:AVCaptureDeviceSubjectAreaDidChangeNotification object: self.captureDeviceInput.device];
-    } else {
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:AVCaptureDeviceSubjectAreaDidChangeNotification object:self.captureDeviceInput.device];
     }
+}
+
+-(void) setTapToFocusEnabled:(BOOL)tapToFocusEnabled {
+    
+    if (_tapToFocusEnabled != tapToFocusEnabled){
+        _tapToFocusEnabled = tapToFocusEnabled;
+        
+        if (self.isRunning){
+            [self listenForFocusEvents:tapToFocusEnabled];
+        }
+    }
+    
 }
 
 -(void) handleFocusTap: (UITapGestureRecognizer*)recognizer {
@@ -414,12 +424,16 @@ typedef enum {
             
             if ([device isFocusPointOfInterestSupported] && [device isFocusModeSupported:focusMode]){
                 [device setFocusMode:focusMode];
-                [device setFocusPointOfInterest:focalPoint];
+                if (mode != kLKSStreamCameraFocusModeLocked){
+                    [device setFocusPointOfInterest:focalPoint];
+                }
             }
             
             if ([device isExposurePointOfInterestSupported] && [device isExposureModeSupported:exposureMode]) {
                 [device setExposureMode:exposureMode];
-                [device setExposurePointOfInterest:focalPoint];
+                if (mode != kLKSStreamCameraFocusModeLocked){
+                    [device setExposurePointOfInterest:focalPoint];
+                }
             }
             
             if ([device isWhiteBalanceModeSupported:whiteBalanceMode]) {
@@ -437,6 +451,12 @@ typedef enum {
             
         }
     });
+}
+
+-(void) lockSettings {
+    
+    [self focusAtPoint:CGPointMake(0.5f, 0.5f) mode:kLKSStreamCameraFocusModeLocked];
+    
 }
 
 - (void)subjectAreaDidChange:(NSNotification *)notification {
