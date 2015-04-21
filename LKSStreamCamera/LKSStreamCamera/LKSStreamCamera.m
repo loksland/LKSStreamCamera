@@ -35,7 +35,7 @@ typedef enum {
 
 @property (nonatomic,assign,readwrite) LKSStreamCameraScaleMode scaleMode;
 @property (nonatomic,assign) CGRect viewFrame;
-//@property (nonatomic,assign) BOOL tapToFocusEnabled;
+@property (nonatomic,assign) BOOL tapToFocusEnabled;
 
 @property (nonatomic,assign,readonly) BOOL isRunning;
 
@@ -202,7 +202,9 @@ typedef enum {
     
     dispatch_async(self.sessionQueue, ^{
         
-        [self listenForFocusEvents:YES];
+        if (!self.locked){
+            [self listenForFocusEvents:YES];
+        }
         
         // Attempt session reboot
         __weak LKSStreamCamera *weakSelf = self;
@@ -213,6 +215,7 @@ typedef enum {
                 // Manually restarting the session since it must have been stopped due to an error.
                 [self.session startRunning];
             });
+            
         }]];
         
         [self.session startRunning];
@@ -355,18 +358,6 @@ typedef enum {
     }
 }
 
--(void) setTapToFocusEnabled:(BOOL)tapToFocusEnabled {
-    
-    if (_tapToFocusEnabled != tapToFocusEnabled){
-        _tapToFocusEnabled = tapToFocusEnabled;
-        
-        if (self.isRunning){
-            [self listenForFocusEvents:tapToFocusEnabled];
-        }
-    }
-    
-}
-
 -(void) handleFocusTap: (UITapGestureRecognizer*)recognizer {
     
     CGPoint location = [recognizer locationInView: recognizer.view];
@@ -453,10 +444,21 @@ typedef enum {
     });
 }
 
--(void) lockSettings {
+-(void) setLocked:(BOOL)locked {
     
-    [self focusAtPoint:CGPointMake(0.5f, 0.5f) mode:kLKSStreamCameraFocusModeLocked];
-    
+    if (_locked != locked){
+        _locked = locked;
+        
+        if (locked){
+            [self focusAtPoint:CGPointMake(0.5f, 0.5f) mode:kLKSStreamCameraFocusModeLocked];
+        } else {
+            [self focusAtPoint:CGPointMake(0.5f, 0.5f) mode:kLKSStreamCameraFocusModeContinuous];
+        }
+        
+        if (self.isRunning){
+            [self listenForFocusEvents:!locked];
+        }
+    }
 }
 
 - (void)subjectAreaDidChange:(NSNotification *)notification {

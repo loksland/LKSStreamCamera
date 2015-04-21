@@ -35,8 +35,8 @@
         
         self.imageView.image = image;
         NSLog(@"Img %fx%f:", image.size.width, image.size.height);
-        [self.streamCamera lockSettings];
-        self.streamCamera.tapToFocusEnabled = NO;
+    
+        self.streamCamera.locked = !self.streamCamera.locked;
     }];
     
     /*
