@@ -38,6 +38,7 @@ typedef enum {
 @property (nonatomic,assign) BOOL tapToFocusEnabled;
 
 @property (nonatomic,assign,readonly) BOOL isRunning;
+@property (nonatomic,assign) BOOL paused;
 
 @end
 
@@ -222,6 +223,8 @@ typedef enum {
         
     });
 }
+
+
 
 - (void)viewDidDisappear:(BOOL)animated {
     
@@ -442,6 +445,49 @@ typedef enum {
             
         }
     });
+}
+
+-(void) pausePreview: (BOOL)pause {
+ 
+    
+    if (!self.sessionQueue){
+        return;
+    }
+    
+    if (pause && self.isRunning){
+       
+        dispatch_async(self.sessionQueue, ^{
+            
+            [self listenForFocusEvents:NO];
+            
+            [self.session stopRunning];
+            
+            [[NSNotificationCenter defaultCenter] removeObserver:self.runtimeErrorHandlingObserver];
+           
+        });
+    }
+    
+    if (!pause && !self.isRunning && self.authOK && self.deviceExists && self.session) {
+       
+        dispatch_async(self.sessionQueue, ^{
+            if (!self.locked){
+                [self listenForFocusEvents:YES];
+            }
+            // Attempt session reboot
+            __weak LKSStreamCamera *weakSelf = self;
+            [self setRuntimeErrorHandlingObserver:[[NSNotificationCenter defaultCenter] addObserverForName:AVCaptureSessionRuntimeErrorNotification object:self.session queue:nil usingBlock:^(NSNotification *note) {
+                
+                LKSStreamCamera *strongSelf = weakSelf;
+                dispatch_async([strongSelf sessionQueue], ^{
+                    // Manually restarting the session since it must have been stopped due to an error.
+                    [self.session startRunning];
+                });
+                
+            }]];
+            [self.session startRunning];
+            
+        });
+    }
 }
 
 -(void) setLocked:(BOOL)locked {

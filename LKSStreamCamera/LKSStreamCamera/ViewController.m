@@ -57,6 +57,17 @@
    */
 }
 
+- (IBAction)pauseStream:(id)sender {
+    
+    [self.streamCamera pausePreview:YES];
+    
+}
+- (IBAction)resumeStream:(id)sender {
+    
+    [self.streamCamera pausePreview:NO];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
